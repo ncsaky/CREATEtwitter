@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Tweets</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recent Tweets</h1>
+        {% for tweet in tweets %}
+        <div class="tweet">
+            <div class="username">{{ tweet.username }}</div>
+            <div class="content">{{ tweet.content }}</div>
+        </div>
+        {% endfor %}
+        <div class="create-link">
+            <a href="{{ url_for('create_tweet') }}">Create a new tweet</a>
+        </div>
+    </div>
+</body>
+</html>
